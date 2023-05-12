@@ -536,31 +536,31 @@ def dissimilarity(clusters):
 
 
 
-def trykmeans(examples, numClusters, numTrials,
-              verbose = False):
-    """
-    Best clustering outcome within a given number of trials
-    of k-means clustering
+# def trykmeans(examples, numClusters, numTrials,
+#               verbose = False):
+#     """
+#     Best clustering outcome within a given number of trials
+#     of k-means clustering
 
-    Requires:
-    examples a list of examples of a same type;
-    numClusters positive int, number of clusters;
-    numTrials positive int, number of trials with k-means clustering
-    Ensures:
-    The clusters obtained with the lowest dissimilarity among them
-    after running k-means clustering numTrials times over examples
-    """
-    best = kmeans(examples, numClusters, verbose)
-    minDissimilarity = dissimilarity(best)
+#     Requires:
+#     examples a list of examples of a same type;
+#     numClusters positive int, number of clusters;
+#     numTrials positive int, number of trials with k-means clustering
+#     Ensures:
+#     The clusters obtained with the lowest dissimilarity among them
+#     after running k-means clustering numTrials times over examples
+#     """
+#     best = kmeans(examples, numClusters, verbose)
+#     minDissimilarity = dissimilarity(best)
     
-    for trial in range(1, numTrials):
-        clusters = kmeans(examples, numClusters, verbose)
-        currDissimilarity = dissimilarity(clusters)
-        if currDissimilarity < minDissimilarity:
-            best = clusters
-            minDissimilarity = currDissimilarity
+#     for trial in range(1, numTrials):
+#         clusters = kmeans(examples, numClusters, verbose)
+#         currDissimilarity = dissimilarity(clusters)
+#         if currDissimilarity < minDissimilarity:
+#             best = clusters
+#             minDissimilarity = currDissimilarity
             
-    return best
+#     return best
 
 
 
@@ -617,34 +617,34 @@ def plotSamples(samples, marker):
 
 
 
-def contrivedTest(numTrials, k, verbose):
-    """
-    Testing k-means with a test case
+# def contrivedTest(numTrials, k, verbose):
+#     """
+#     Testing k-means with a test case
 
-    Requires;
-    numTrials positive int, number of trials for k-means clustering;
-    k positive int, number of clusters to be formed;
-    verbose Boolean, printing details on/off
-    Ensures:
-    test runned
-    """
-    #random.seed(0)
-    random.seed()
-    xMean = 3
-    xSD = 1
-    yMean = 5
-    ySD = 1
-    n = 10
-    d1Samples = genDistribution(xMean, xSD, yMean, ySD, n, 'A')
-    plotSamples(d1Samples, 'k^')
-    d2Samples = genDistribution(xMean+3, xSD, yMean+1, ySD, n, 'B')
-    plotSamples(d2Samples, 'ko')
-    plt.show()
-    clusters = trykmeans(d1Samples + d2Samples, k,
-                         numTrials, verbose)
-    print('Final result')
-    for c in clusters:
-        print('', c)
+#     Requires;
+#     numTrials positive int, number of trials for k-means clustering;
+#     k positive int, number of clusters to be formed;
+#     verbose Boolean, printing details on/off
+#     Ensures:
+#     test runned
+#     """
+#     #random.seed(0)
+#     random.seed()
+#     xMean = 3
+#     xSD = 1
+#     yMean = 5
+#     ySD = 1
+#     n = 10
+#     d1Samples = genDistribution(xMean, xSD, yMean, ySD, n, 'A')
+#     plotSamples(d1Samples, 'k^')
+#     d2Samples = genDistribution(xMean+3, xSD, yMean+1, ySD, n, 'B')
+#     plotSamples(d2Samples, 'ko')
+#     plt.show()
+#     clusters = trykmeans(d1Samples + d2Samples, k,
+#                          numTrials, verbose)
+#     print('Final result')
+#     for c in clusters:
+#         print('', c)
 
 
 #contrivedTest(3, 4, True)
