@@ -1,0 +1,12 @@
+#degree; title name masculine; feminine
+10; Rei ; Rainha
+9; Príncipe / Princesa
+8; Duque / Duquesa
+7; Conde / Condessa
+6; Visconde / Viscondessa
+5; Barão / Baronesa
+4; Superstar
+3; Magnata
+2; Campeão Olímpico / Paralímpico
+1; CEO de grande empresa
+0; Empreendedor de sucesso
