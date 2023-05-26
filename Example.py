@@ -114,8 +114,13 @@ class Example(object):
     
    
     
-##    def __eq__(self): #to be implemented
-##            pass
+   def __eq__(self):
+        """
+       Equality comparison method
+
+       Ensures:
+       
+        """
 ##
 ##
 ##    def __lt__(self): #to be implemented

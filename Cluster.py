@@ -129,9 +129,22 @@ class Cluster(object):
         return result[:-2] #remove trailing comma and space
 
 
-##    def __eq__(self):  #to be implemented
-##            pass
-##
-##
-##    def __lt__(self):  #to be implemented
-##            pass
+    def __eq__(self, other):  
+        """
+        Equality comparison method
+
+        Ensures:
+        returns True if the current object is equal to the other object, False otherwise
+        """
+        return self._examples == other._examples and self._centroid == other._centroid
+
+
+    def __lt__(self, other):  
+        """
+        Less than comparison method
+
+        Ensures:
+        returns True if the current object is less than the other object, False otherwise
+        """
+        return self._examples < other._examples
+            
