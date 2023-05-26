@@ -112,8 +112,27 @@ class Example(object):
         """
         return self._name + ':' + str(self._features) + ':' + str(self._label)
     
-   
+       
+    def __eq__(self, other):
+        """
+       Equality comparison method
+
+       Ensures:
+       returns True if the current object is equal to the other object, False otherwise
+        """
+        return self._name == other._name and self._features == other._features and self._label == other._label
+
+
+    def __lt__(self, other):
+        """
+        Less than comparison method
+
+        Ensures:
+        returns True if the current object is less than the other object, False otherwise
+        """
+        return self._name < other._name
     
+<<<<<<< HEAD
    def __eq__(self):
         """
        Equality comparison method
@@ -126,3 +145,6 @@ class Example(object):
 ##    def __lt__(self): #to be implemented
 ##            pass
         
+=======
+           
+>>>>>>> main
