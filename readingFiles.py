@@ -13,8 +13,8 @@ def readTitlesDict(file_name):
     titles = {}
     inFile = open(file_name, 'r')
     #iterates through each line in the file and append the titles that are spanned like this "2; Campeão Olímpico ; Paralímpico"
-    for line in inFile:
-        titles[line.split(';')[0]] = line.split(';')[1]
-    return titles
+    # for line in inFile:
+    #     titles[line.split(';')[0]] = line.split(';')[1]
+    # return titles
 
 print(readTitlesDict('titles.txt'))
