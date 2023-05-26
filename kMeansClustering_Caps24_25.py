@@ -27,16 +27,6 @@ def minkowskiDist(v1, v2, p):
     return dist**(1.0/p)
 
 
-# Testing
-
-#cascavel = [1,1,1,1,0]
-#jiboia = [0,1,0,1,0]
-#print("Euclidean distance:", minkowskiDist(cascavel, jiboia, 2))
-#print("Manhattan distance:", minkowskiDist(cascavel, jiboia, 1), "\n")
-
-
-
-# First case study with animals 
 
 class Animal(object):
     """
