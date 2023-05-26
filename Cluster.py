@@ -1,3 +1,8 @@
+# 2022-2023 Programacao 2 LTI
+# Grupo 17
+# 60260 Guilherme Pinto
+# 60 André Guo
+
 import Example
 
 class Cluster(object):

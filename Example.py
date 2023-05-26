@@ -1,3 +1,8 @@
+# 2022-2023 Programacao 2 LTI
+# Grupo 17
+# 60260 Guilherme Pinto
+# 60 André Guo
+
 from MkDist import minkowskiDist
 
 class Example(object):
@@ -132,19 +137,4 @@ class Example(object):
         """
         return self._name < other._name
     
-<<<<<<< HEAD
-   def __eq__(self):
-        """
-       Equality comparison method
 
-       Ensures:
-       
-        """
-##
-##
-##    def __lt__(self): #to be implemented
-##            pass
-        
-=======
-           
->>>>>>> main

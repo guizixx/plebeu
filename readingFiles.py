@@ -1,20 +1,38 @@
-# def readTitlesFile(file_name):
-#     titles = []
-#     inFile = open(file_name, 'r')
-#     #iterates through each line in the file and append the titles that are spanned like this "2; Campeão Olímpico ; Paralímpico"
-#     for line in inFile:
-#         titles.append(line.split(';')[1])
-#     return titles
+# 2022-2023 Programacao 2 LTI
+# Grupo 17
+# 60260 Guilherme Pinto
+# 60 André Guo
 
-# print(readTitlesFile('titles.txt'))
-
-#function that reads a file organized like this "2; Campeão Olímpico ; Paralímpico" in every line and stores the titles in a dictionary
 def readTitlesDict(file_name):
-    titles = {}
+    '''
+    Reads titles file into a dictionary.
+
+    Requires: 
+    file_name is the name of the titles file.
+    
+    Ensures:
+    Returns a dictionary of titles.
+    '''
+    titlesList = []
+    titlesDic = {}
     inFile = open(file_name, 'r')
-    #iterates through each line in the file and append the titles that are spanned like this "2; Campeão Olímpico ; Paralímpico"
-    # for line in inFile:
-    #     titles[line.split(';')[0]] = line.split(';')[1]
-    # return titles
+    for line in inFile:
+        l = line.replace('\n' , '').split(';')
+        titlesList.append(l)
+    titlesList.pop(0)
+    for i in range(len(titlesList)):
+        if len(titlesList[i]) < 3:
+            titlesDic[titlesList[i][1]] = titlesList[i][0]
+        else:
+            titlesDic[titlesList[i][1]] = titlesList[i][0]
+            titlesDic[titlesList[i][2]] = titlesList[i][0]
+    return titlesDic
+    
 
 print(readTitlesDict('titles.txt'))
+
+
+def readCandFile(file_name):
+    '''
+    Reads candidates file into a list.
+    '''
