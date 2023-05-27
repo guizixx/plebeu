@@ -3,41 +3,41 @@
 # 60260 Guilherme Pinto
 # 60262 André Guo
 
-from Example import Example
+from Candidates import Candidates
 
 class Cluster(object):
     """
-    Cluster of examples
+    Cluster of candidates
     """
     
-    def __init__(self, examples):
+    def __init__(self, candidates):
         """
         Constructor
 
         Requires:
-        examples is a list of objects of a type that has
+        candidates is a list of objects of a type that has
         a method returning the list of features of an object and
         a method returning the distance among them;
         Ensures:
         object of type Cluster is created
         """
-        self._examples = examples
+        self._candidates = candidates
         self._centroid = self.computeCentroid()
 
 
-    def update(self, examples):
+    def update(self, candidates):
         """
-        Update the cluster with a given collection of examples
+        Update the cluster with a given collection of candidates
 
         Requires:
-        examples a list of objects of the type of members in self._examples
+        candidates a list of objects of the type of members in self._candidates
         Ensures:
-        examples = getExamples();
+        candidates = getCandidates();
         returns how much the centroid has changed
         """
         oldCentroid = self._centroid
-        self._examples = examples
-        if len(examples) > 0:
+        self._candidates = candidates
+        if len(candidates) > 0:
             self._centroid = self.computeCentroid()
             return oldCentroid.distance(self._centroid)
         else:
@@ -51,26 +51,26 @@ class Cluster(object):
         Ensures:
         centroid of the cluster
         """
-        dim = self._examples[0].dimensionality()
+        dim = self._candidates[0].dimensionality()
         totVals = [0]*dim
-        for e in self._examples:
+        for e in self._candidates:
             for i in range(dim):
                 totVals[i] = totVals[i]+e.getFeatures()[i]
         totValsAveraged = []
         for i in range(dim):
-            totValsAveraged.append(totVals[i]/float(len(self._examples)))
-        centroid = Example('centroid', totValsAveraged)
+            totValsAveraged.append(totVals[i]/float(len(self._candidates)))
+        centroid = Candidates('centroid', totValsAveraged)
         return centroid
     
 
-    def getExamples(self):
+    def getCandidates(self):
         """
-        Examples in the cluster
+        candidates in the cluster
 
         Ensures:
-        list with examples in the cluster
+        list with candidates in the cluster
         """
-        return self._examples
+        return self._candidates
 
 
     def getCentroid(self):
@@ -88,9 +88,9 @@ class Cluster(object):
         Size of the cluster
 
         Ensures:
-        number of examples in cluster
+        number of candidates in cluster
         """
-        return len(self._examples)
+        return len(self._candidates)
     
 
     def variability(self):
@@ -101,7 +101,7 @@ class Cluster(object):
         variance of the cluster
         """
         totDist = 0.0
-        for e in self._examples:
+        for e in self._candidates:
             totDist += (e.distance(self._centroid))**2
         return totDist
     
@@ -110,7 +110,7 @@ class Cluster(object):
         """
         Generator method
         """
-        for e in self._examples:
+        for e in self._candidates:
             yield e
             
 
@@ -124,7 +124,7 @@ class Cluster(object):
          ex1 ex2 ... exN "
         """
         names = []
-        for e in self._examples:
+        for e in self._candidates:
             names.append(e.getName())
         names.sort()
         result = 'Cluster with centroid '\
@@ -141,7 +141,7 @@ class Cluster(object):
         Ensures:
         returns True if the current object is equal to the other object, False otherwise
         """
-        return self._examples == other._examples and self._centroid == other._centroid
+        return self._candidates == other._candidates and self._centroid == other._centroid
 
 
     def __lt__(self, other):  
@@ -151,5 +151,5 @@ class Cluster(object):
         Ensures:
         returns True if the current object is less than the other object, False otherwise
         """
-        return self._examples < other._examples
+        return self._candidates < other._candidates
             

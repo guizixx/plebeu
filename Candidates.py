@@ -1,3 +1,9 @@
+# 2022-2023 Programacao 2 LTI
+# Grupo 17
+# 60260 Guilherme Pinto
+# 60262 André Guo
+
+from readingFiles import readTitlesDict, readCandFile
 from MkDist import minkowskiDist
 
 class Candidates(object):
@@ -5,18 +11,18 @@ class Candidates(object):
     Candidates
     """
 
-    def __init__(self, name, titles):
+    def __init__(self, inputFileName, titlesFileName):
         """
         Constructor
 
         Requires:
-        name a string representing the name of the candidates;
-        titles a list of numbers representing its titles vector
+        inputFileName is the name of candidates file
+        titlesFileName is the name of titles file
         Ensures:
         object of candidates created
         """
-        self._name = name
-        self._titles = titles
+        self._inputFileName = inputFileName
+        self._titlesFileName = titlesFileName
 
     def dimensionality(self):
         """
@@ -27,44 +33,73 @@ class Candidates(object):
         """
         return len(self._titles)
     
+
+    def candidatesList(self):
+        '''
+        Creates a list with the candidates
+        '''
+        self._candidates = readCandFile(self._inputFileName)
+        return self._candidates
+
     
-    def setName(self, name):
-        """
-        Name setting
-
-        Ensures:
-        self._name = name
-        """
-        self._name = name
-
-
-    def setTiles(self, titles):
-        """
-        Titles setting
-
-        Ensures:
-        self._titles = titles
-        """
-        self._titles = titles
-
-
-    def getName(self):
-        """
-        Name of the candidates
-
-        Ensures:
-        name of candidates
-        """
-        return self._name
-
-    def getTitles(self):
-        """
-        Titles vector of the candidates
-    
-        Ensures:
-        list representing the titles vector of the animal
-        """
+    def titlesDictionary(self):
+        '''
+        Creates a dictionary with the titles
+        '''
+        self._titles = readTitlesDict(self._titlesFileName)
         return self._titles
+    
+
+    def getCandidates(self):
+        '''
+        Get's the name of the candidates
+        '''
+        return self._candidates
+    
+    def getTitles(self):
+        '''
+        Get's the titles
+        '''
+        return self._titles
+
+    def setCandidatesFileName(self, name):
+        """
+        Candidates file name setting
+
+        Ensures:
+        self._inputFileName = name
+        """
+        self._inputFileName = name
+
+
+    def setTitlesFileName(self, titles):
+        """
+        Titles file name setting
+
+        Ensures:
+        self._titlesFileName = titles
+        """
+        self._titlesFileName = titles
+
+
+    def getCandidatesFileName(self):
+        """
+        Get's the candidates file name
+
+        Ensures:
+        name of candidates file
+        """
+        return self._inputFileName
+
+
+    def getTitlesFileName(self):
+        """
+        Get's the titles file name
+    
+        Ensures:
+        name of titles file
+        """
+        return self._titlesFileName
     
 
     def distance(self, other):
