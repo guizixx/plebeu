@@ -137,4 +137,23 @@ class Example(object):
         """
         return self._name < other._name
     
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+           
+=======
+   def __eq__(self):
+        """
+       Equality comparison method
+
+       Ensures:
+       
+        """
+##
+##
+##    def __lt__(self): #to be implemented
+##            pass
+        
+>>>>>>> main
+>>>>>>> Stashed changes
