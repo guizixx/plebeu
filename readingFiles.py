@@ -3,6 +3,8 @@
 # 60260 Guilherme Pinto
 # 60262 André Guo
 
+from Candidates import Candidates
+
 def readTitlesDict(titlesFileName):
     '''
     Reads titles file into a dictionary.
@@ -44,12 +46,14 @@ def readCandFile(inputFileName):
     candList = []
     inFile = open(inputFileName, 'r')
     for line in inFile:
-        if line.startswith: #skip lines that start with '#'
+        if line.startswith('#'):
             continue
         l = line.replace('\n', '').split(';')
-        candList.append(l)
+        candidate = Candidates(l[0], l[1], l[2], l[3], l[4], l[5], l[6])
+        candList.append(candidate)
     inFile.close()
     return candList
+
 
 
 print(readCandFile('inputFile.txt'))
