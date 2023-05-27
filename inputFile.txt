@@ -1,0 +1,19 @@
+#Name and features:
+#Name; father's title; mother's title; paternal grandfather's title; paternal grandmother's title;
+maternal grandfather's title; maternal grandmother's title
+#Candidates:
+Isabela Santos; count; entrepeneur; duke; countess; olympic; magnate 
+Lucas Pereira; king; queen; ceo; princess; superstar; baroness
+Sofia Oliveira; baron; baroness; entrepeneur; superstar; olympic champion; ceo
+Gabriel Costa; olympic champion; ceo; viscount; viscountess; magnata; baroness
+Amanda Ferreira; ceo; olympic champion; count; countess; duke; duchess
+Felipe Almeida; duke; superstar; baron; tiktokInfluencer; magnata; duchess
+Maria Ribeiro; tiktokInfluencer; olympic champion; olympic champion; ceo; superstar; viscountess
+João Martins; count; ceo; olympic champion; ceo; superstar; magnate
+Ana Silva; tiktokInfluencer; entrepeneur; duke; countess; olypmic champion; queen
+Carlos Souza; king; queen; ceo; princess; superstar; baroness
+Camila Mendes; superstar; ceo; duke; duchess; olympic champion; viscountess
+Pedro Rocha; entrepeneur; princess; magnata; duchess; olympic champion; baroness
+Laura Santos; duke; duchess; prince; queen; superstar; magnate
+Tiago Nunes; ceo; entrepeneur; olympic champion; countess; viscount; viscountess
+Juliana Fernandes; tiktokInfluencer; viscount; entrepeneur; superstar; ceo; olympic champion

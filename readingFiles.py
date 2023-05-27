@@ -15,17 +15,17 @@ def readTitlesDict(file_name):
     '''
     titlesList = []
     titlesDic = {}
+    line_count = 0 #counter variable to keep track of the lines
     inFile = open(file_name, 'r')
     for line in inFile:
+        line_count += 1
+        if line_count <= 1: #skips first line
+            continue
         l = line.replace('\n' , '').split(';')
         titlesList.append(l)
-    titlesList.pop(0)
     for i in range(len(titlesList)):
-        if len(titlesList[i]) < 3:
-            titlesDic[titlesList[i][1]] = titlesList[i][0]
-        else:
-            titlesDic[titlesList[i][1]] = titlesList[i][0]
-            titlesDic[titlesList[i][2]] = titlesList[i][0]
+        titlesDic[titlesList[i][1]] = titlesList[i][0]
+        titlesDic[titlesList[i][2]] = titlesList[i][0]
     return titlesDic
     
 
@@ -35,4 +35,24 @@ print(readTitlesDict('titles.txt'))
 def readCandFile(file_name):
     '''
     Reads candidates file into a list.
+
+    Requires:
+    file_name is the name of the candidates file.
+    
+    Ensures:
+    Returns a list of candidates.
     '''
+    candList = []
+    line_count = 0 #counter variable to keep track of the lines
+    inFile = open(file_name, 'r')
+    for line in inFile:
+        line_count += 1
+        if line_count <= 4: #skip first 4 lines
+            continue
+        l = line.replace('\n', '').split(';')
+        candList.append(l)
+    inFile.close()
+    return candList
+
+
+print(readCandFile('inputFile.txt'))

@@ -1,12 +1,13 @@
 #degree; title name masculine; feminine
-10; Rei ; Rainha
-9; Principe ; Princesa
-8; Duque ; Duquesa
-7; Conde ; Condessa
-6; Visconde ; Viscondessa
-5; Barao ; Baronesa
-4; Superstar
-3; Magnata
-2; Campeao Olimpico ; Paralimpico
-1; CEO de grande empresa
-0; Empreendedor de sucesso
+11; king ; queen
+10; prince ; princess
+9; duke ; duchess
+8; count ; countess
+7; viscount ; viscountess
+6; baron ; baroness
+5; superstar ; superstar
+4; tiktokInfluencer; tiktokInfluencer
+3; magnata ; magnate
+2; Olympic Champion ; olympic champion
+1; ceo ; ceo
+0; entrepeneur ; entrepeneur
