@@ -1,9 +1,9 @@
 # 2022-2023 Programacao 2 LTI
 # Grupo 17
 # 60260 Guilherme Pinto
-# 60 André Guo
+# 60262 André Guo
 
-import Example
+from Example import Example
 
 class Cluster(object):
     """

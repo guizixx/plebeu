@@ -1,10 +1,10 @@
 # 2022-2023 Programacao 2 LTI
 # Grupo 17
 # 60260 Guilherme Pinto
-# 60 André Guo
+# 60262 André Guo
 
 import random
-import Cluster
+from Cluster import Cluster
 
 def kmeans(examples, k, verbose):
     """
